@@ -2,15 +2,23 @@
 
 Welcome to the Trackmob Coding Challenge!
 
-When you are collecting finances to charge client, you should care
+When you are collecting finances to charge customers, you should care
 with monthly frequency and payment day. We have prepared a simple 
-database schema to model this. Given a date an algorithm needs to
+database schema to model this. Given a date, an algorithm needs to
 calculate if it is possible or not to charge in the current month.
 
+Frequency examples:
+frequency 0 is an unique payment
+frequency 1 is monthly payment
+frequency 2 is bimonthly payment
+and so on...
+
 ##Rules:
-- Frequency unique(0) should be charged only one time in the first month.
+- Frequency unique(frequency = 0) should be charged only one time 
+in the first month. 
 - If date is higher than payment day, then it must not be charged.
 
+Consider that the collection period starts on the first month.
 We don't handle if it is already collected or not.
 
 We've set up some basic infrastructure with rspec, sqlite and the
@@ -32,8 +40,8 @@ PROBLEM!
 
 - How would you extend the data model to support recollection?
 
-- Can you suggest a data structure that makes collect payments easy
-  and fast? What would be the trade-offs?
+- Can you suggest a data structure that makes payment collection 
+  easier and faster? What would be the trade-offs?
 
 ## Submitting your work
 

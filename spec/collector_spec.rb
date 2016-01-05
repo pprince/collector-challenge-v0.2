@@ -28,7 +28,7 @@ describe Collector do
       recurrent: true
     )
     db[:collectors].insert(
-      payment_day: 30, 
+      payment_day: 20, 
       frequency: 2,
       recurrent: true
     )
@@ -57,11 +57,15 @@ describe Collector do
     }
 
     it {
-      expect( collector.payments_collected_in(Date.new(2016, 2, 1)) ).to eq(4)
+      expect( collector.payments_collected_in(Date.new(2016, 2, 1)) ).to eq(3)
     }
 
     it {
-      expect( collector.payments_collected_in(Date.new(2016, 4, 1)) ).to eq(5)
+      expect( collector.payments_collected_in(Date.new(2016, 3, 1)) ).to eq(4)
+    }
+
+    it {
+      expect( collector.payments_collected_in(Date.new(2016, 4, 1)) ).to eq(4)
     }
 
     it {
@@ -69,7 +73,11 @@ describe Collector do
     }
 
     it {
-      expect( collector.payments_collected_in(Date.new(2016, 10, 1)) ).to eq(6)
+      expect( collector.payments_collected_in(Date.new(2016, 10, 1)) ).to eq(4)
+    }
+
+    it {
+      expect( collector.payments_collected_in(Date.new(2016, 11, 1)) ).to eq(6)
     }
     
     it {
@@ -77,7 +85,7 @@ describe Collector do
     }
 
     it {
-      expect( collector.payments_collected_in(Date.new(2016, 10, 15)) ).to eq(4)
+      expect( collector.payments_collected_in(Date.new(2016, 11, 15)) ).to eq(4)
     }
   end
 end
