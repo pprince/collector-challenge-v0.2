@@ -4,6 +4,7 @@ Sequel.migration do
       Fixnum  :payment_day
       Fixnum  :frequency
       Boolean :recurrent
+      Date    :created_at
     end
   end
 end

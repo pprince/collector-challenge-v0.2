@@ -3,49 +3,58 @@ require "spec_helper"
 describe Collector do
   before do
     db[:collectors].insert(
-      payment_day: 10, 
+      payment_day: 10,
       frequency: 0,
-      recurrent: false
+      recurrent: false,
+      created_at: '2016-01-01'
     )
     db[:collectors].insert(
-      payment_day: 10, 
+      payment_day: 10,
       frequency: 1,
-      recurrent: true
+      recurrent: true,
+      created_at: '2016-01-01'
     )
     db[:collectors].insert(
-      payment_day: 15, 
+      payment_day: 15,
       frequency: 1,
-      recurrent: true
+      recurrent: true,
+      created_at: '2016-01-01'
     )
     db[:collectors].insert(
-      payment_day: 20, 
+      payment_day: 20,
       frequency: 1,
-      recurrent: true
+      recurrent: true,
+      created_at: '2016-01-01'
     )
     db[:collectors].insert(
-      payment_day: 30, 
+      payment_day: 30,
       frequency: 4,
-      recurrent: true
+      recurrent: true,
+      created_at: '2016-01-01'
     )
     db[:collectors].insert(
-      payment_day: 20, 
+      payment_day: 20,
       frequency: 2,
-      recurrent: true
+      recurrent: true,
+      created_at: '2016-01-01'
     )
     db[:collectors].insert(
-      payment_day: 20, 
+      payment_day: 20,
       frequency: 3,
-      recurrent: true
+      recurrent: true,
+      created_at: '2016-01-01'
     )
     db[:collectors].insert(
-      payment_day: 10, 
+      payment_day: 10,
       frequency: 5,
-      recurrent: true
+      recurrent: true,
+      created_at: '2016-01-01'
     )
     db[:collectors].insert(
-      payment_day: 30, 
+      payment_day: 30,
       frequency: 5,
-      recurrent: true
+      recurrent: true,
+      created_at: '2016-01-01'
     )
   end
 
@@ -79,7 +88,7 @@ describe Collector do
     it {
       expect( collector.payments_collected_in(Date.new(2016, 11, 1)) ).to eq(6)
     }
-    
+
     it {
       expect( collector.payments_collected_in(Date.new(2016, 3, 20)) ).to eq(2)
     }

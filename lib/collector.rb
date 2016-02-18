@@ -4,6 +4,5 @@ class Collector
   end
 
   def payments_collected_in(date)
-
   end
 end
